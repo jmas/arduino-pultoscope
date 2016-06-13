@@ -40,9 +40,9 @@ and Arduino IDE automatically recognize required libraies.
 
 # Author
 
-Nickname and e-mail: srukami <srukamiua@gmail.com>
-Website: http://srukami.inf.ua/
-Project page: http://srukami.inf.ua/pultoscop_v25110.html
+* Nickname and e-mail: srukami <srukamiua@gmail.com>
+* Website: http://srukami.inf.ua/
+* Project page: http://srukami.inf.ua/pultoscop_v25110.html
 
 # License
 
