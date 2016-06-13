@@ -7,7 +7,6 @@ Project page: http://srukami.inf.ua/pultoscop_v25110.html
 # View
 
 <img src="https://raw.githubusercontent.com/jmas/arduino-pultoscope/master/docs/photo-1.jpg" />
-<img src="https://raw.githubusercontent.com/jmas/arduino-pultoscope/master/docs/photo-2.jpg" />
 
 # Components
 
