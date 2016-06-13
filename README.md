@@ -4,6 +4,11 @@ Oscilloscope based on Arduino and Nokia LCD 5110/3310.
 
 Project page: http://srukami.inf.ua/pultoscop_v25110.html
 
+# View
+
+<img src="https://raw.githubusercontent.com/jmas/arduino-pultoscope/master/docs/photo-1.jpg" />
+<img src="https://raw.githubusercontent.com/jmas/arduino-pultoscope/master/docs/photo-2.jpg" />
+
 # Components
 
 * Arduino board (Arduino Uno, Pro Mini, Nano V3...) x 1
@@ -16,7 +21,7 @@ Project page: http://srukami.inf.ua/pultoscop_v25110.html
 
 # Circuit
 
-...
+<img src="https://raw.githubusercontent.com/jmas/arduino-pultoscope/master/docs/circuit.jpg" />
 
 # Sketch
 
