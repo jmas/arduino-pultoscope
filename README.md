@@ -55,4 +55,4 @@ Content editor, refactoring, graphic, content support:
 
 # License
 
-Clarifying...
+[MIT License](https://github.com/jmas/arduino-pultoscope/blob/master/LICENSE)
