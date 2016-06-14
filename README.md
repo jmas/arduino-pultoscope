@@ -37,7 +37,7 @@ Sketch is situated in directory `pultoscope/`.
 
 Libraries already included into current project (directory `libs/`).
 
-You can copy libraries to your Arduino `libraries` directory (often `<Documents>/Arduino/libraries/`)
+You can copy libraries to your Arduino `libraries/` directory (often `<Documents>/Arduino/libraries/`)
 and Arduino IDE automatically recognize required libraies.
 
 # Authors
