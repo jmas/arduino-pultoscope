@@ -26,7 +26,7 @@ Project page: http://srukami.inf.ua/pultoscop_v25110.html
 
 # Sketch
 
-Sketch is situated in directory `piltoscope/`.
+Sketch is situated in directory `pultoscope/`.
 
 # Required Libraries
 
@@ -37,7 +37,7 @@ Sketch is situated in directory `piltoscope/`.
 
 Libraries already included into current project (directory `libs/`).
 
-You can copy libraries to your `<Documents>/Arduino/libraries/` directory
+You can copy libraries to your Arduino `libraries` directory (often `<Documents>/Arduino/libraries/`)
 and Arduino IDE automatically recognize required libraies.
 
 # Authors
