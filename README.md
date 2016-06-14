@@ -14,7 +14,7 @@ Project page: http://srukami.inf.ua/pultoscop_v25110.html
 
 * Arduino board (Arduino Uno, Pro Mini, Nano V3...) x 1
 * Nokia LCD 5110/3310 x 1
-* 10K Resistor x 5
+* 10K Resistor x 6
 * 270 Om Resistor x 1
 * 0.1 µF Capacitor x 1
 * Mini Push Button x 3
