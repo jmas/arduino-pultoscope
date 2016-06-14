@@ -35,7 +35,7 @@ Sketch is situated in directory `pultoscope/`.
 * https://github.com/PaulStoffregen/FreqCount
 * https://code.google.com/archive/p/arduino-pwm-frequency-library/downloads
 
-Libraries already included into current project (directory `libs/`).
+Libraries already included into current project (directory `libraries/`).
 
 You can copy libraries to your Arduino `libraries/` directory (often `<Documents>/Arduino/libraries/`)
 and Arduino IDE automatically recognize required libraies.
