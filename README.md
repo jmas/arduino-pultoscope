@@ -22,7 +22,7 @@ Project page: http://srukami.inf.ua/pultoscop_v25110.html
 
 # Circuit
 
-<img src="https://raw.githubusercontent.com/jmas/arduino-pultoscope/master/docs/circuit.png" />
+<img src="https://raw.githubusercontent.com/jmas/arduino-pultoscope/master/docs/circuit.png?1" />
 
 # Sketch
 
