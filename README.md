@@ -8,6 +8,8 @@ Project page: http://srukami.inf.ua/pultoscop_v25110.html
 
 <img src="https://raw.githubusercontent.com/jmas/arduino-pultoscope/master/docs/photo-1.jpg" />
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PKpnNiHT4as" frameborder="0" allowfullscreen></iframe>
+
 # Components
 
 * Arduino board (Arduino Uno, Pro Mini, Nano V3...) x 1
