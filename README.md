@@ -8,7 +8,7 @@ Project page: http://srukami.inf.ua/pultoscop_v25110.html
 
 <img src="https://raw.githubusercontent.com/jmas/arduino-pultoscope/master/docs/photo-1.jpg" />
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PKpnNiHT4as" frameborder="0" allowfullscreen></iframe>
+[![Video on Youtube](https://img.youtube.com/vi/PKpnNiHT4as/0.jpg)](https://www.youtube.com/watch?v=PKpnNiHT4as)
 
 # Components
 
