@@ -38,11 +38,18 @@ Libraries already included into current project (directory `libs/`).
 You can copy libraries to your `<Documents>/Arduino/libraries/` directory
 and Arduino IDE automatically recognize required libraies.
 
-# Author
+# Authors
+
+Idea, circuit, program, technical support:
 
 * Nickname and e-mail: srukami <srukamiua@gmail.com>
 * Website: http://srukami.inf.ua/
 * Project page: http://srukami.inf.ua/pultoscop_v25110.html
+* Youtube channel: https://www.youtube.com/channel/UCBwXOEviNuVzotchCHx-QaA
+
+Content editor, refactoring, graphic, content support:
+
+* Name and e-mail: Alexander Maslakov <jmas.ukraine@gmail.com>
 
 # License
 
