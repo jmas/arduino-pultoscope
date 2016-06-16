@@ -468,6 +468,7 @@ void setup() {
  * Loop
  */
 void loop() {
+  // display set defaults
   display.clearDisplay();
   display.setTextColor(BLACK);
   display.setCursor(0,0);
@@ -477,7 +478,7 @@ void loop() {
   if (minusBtnPressed && plusBtnPressed) {
     state = STATE_MENU;
   }
-  // process selected function
+  // process selected state
   switch (state) {
     case STATE_MENU:
       menu();
