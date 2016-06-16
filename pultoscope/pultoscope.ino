@@ -493,7 +493,6 @@ void loop() {
   // display set defaults
   display.clearDisplay();
   display.setTextColor(BLACK);
-  display.setCursor(0,0);
   // receive buttons states
   updateButtons();
   // process buttons
