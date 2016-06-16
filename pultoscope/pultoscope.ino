@@ -407,13 +407,19 @@ void generator() {
  * DDS Generator
  */
 void ddsGenerator() {
-  display.println("Pultoscope");
+  display.println("DDS Generator");
 }
 
+/**
+ * Terminal
+ */
 void terminal() {
   display.println("Terminal");
 }
 
+/**
+ * Update buttons states
+ */
 void updateButtons() {
     minusBtnPressed = false;
     okBtnPressed = false;
@@ -449,12 +455,18 @@ void updateButtons() {
     }
 }
 
+/**
+ * Setup
+ */
 void setup() {
   // display
   display.begin();
   display.setContrast(DISPLAY_CONTRAST);
 }
 
+/**
+ * Loop
+ */
 void loop() {
   display.clearDisplay();
   display.setTextColor(BLACK);
