@@ -59,8 +59,7 @@
 #define OSCILL_STATE_MEASURE 0
 #define OSCILL_STATE_SCAN 1
 #define OSCILL_STATE_PAUSE 2
-#define OSCILL_STATE_REF_VOLTAGE 3
-#define OSCILL_STATE_SYNCH 4
+#define OSCILL_STATE_SYNCH 3
 
 /**
  * Variables block
@@ -78,7 +77,6 @@ unsigned long btnPressTime = 0;
 
 // oscilloscope
 int oscillState = OSCILL_STATE_MEASURE;
-bool oscillPaused = false;
 bool oscillRefVoltage = false;
 int oscillVMax = 0;
 byte oscillScan = 0;
@@ -156,12 +154,19 @@ void menu() {
  */
 void oscilloscope() {
   byte x = 0;
+  // walking through menu items
+  if (okBtnPressed) {
+    oscillState++;
+    if (oscillState > OSCILL_STATE_SYNCH) {
+      oscillState = OSCILL_STATE_MEASURE;
+    }
+  }
   if (! oscillRefVoltage) { // Internal reference voltage 1,1V
     ADMUX = 0b11100011;
   } else { // External reference voltage
     ADMUX = 0b01100011;
   }
-  if (! oscillPaused) {
+  if (oscillState != OSCILL_STATE_PAUSE) {
     if (oscillScan >= 6) { ADCSRA = 0b11100010; } // divider 4
     if (oscillScan == 5) { ADCSRA = 0b11100011; } // divider 8
     if (oscillScan == 4) { ADCSRA = 0b11100100; } // divider 16
@@ -206,7 +211,7 @@ void oscilloscope() {
     }
   }
   // chart drawing
-  if (! oscillPaused) {
+  if (oscillState != OSCILL_STATE_PAUSE) {
     display.fillCircle(80,47-oscillSynU/7, 2, BLACK); // synchronization level drawing
     x=3;
     for (int y=oscillSynMass; y<oscillSynMass+80; y++) {
@@ -302,7 +307,6 @@ void oscilloscope() {
     display.print(oscillScan);
     display.setTextColor(WHITE, BLACK); 
     display.print(" P");
-    oscillPaused = true;
     if (minusBtnPressed) {
       oscillScroll = oscillScroll-10;
       if (oscillScroll < 0) {
@@ -318,7 +322,6 @@ void oscilloscope() {
   }
   if (oscillState == OSCILL_STATE_SYNCH) {
     oscillScroll=0;
-    oscillPaused = false;
     display.setCursor(0, 0);
     display.setTextColor( BLACK);
     if (oscillRefVoltage == 0) {
@@ -345,14 +348,6 @@ void oscilloscope() {
     }
     display.fillCircle(80,47-oscillSynU/7, 5, BLACK);
     display.fillCircle(80,47-oscillSynU/7, 2, WHITE);
-  }
-  // walking through menu items
-  if (okBtnPressed) {
-    oscillState++;
-    if (oscillState > OSCILL_STATE_SYNCH) {
-      oscillState = OSCILL_STATE_MEASURE;
-      oscillPaused = false;
-    }
   }
   // get freequency when conter is ready
   if (FreqCount.available()) {
