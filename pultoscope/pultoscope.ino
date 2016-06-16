@@ -18,7 +18,6 @@
 #define DISPLAY_CS 3
 #define DISPLAY_RST 2
 
-#define PIN_POWRER 8
 #define PIN_MINUS_BTN 13
 #define PIN_OK_BTN 12
 #define PIN_PLUS_BTN 11
