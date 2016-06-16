@@ -443,13 +443,13 @@ void terminal() {
  * Update buttons states
  */
 void updateButtons() {
-  minusBtnPressed = false;
-  okBtnPressed = false;
-  plusBtnPressed = false;
   bool _minusBtnPressed = false;
   bool _okBtnPressed = false;
   bool _plusBtnPressed = false;
   bool pressed = false;
+  minusBtnPressed = false;
+  okBtnPressed = false;
+  plusBtnPressed = false;
   if (digitalRead(BTN_MINUS_PIN) == HIGH) {
     pressed = true;
     _minusBtnPressed = true;
