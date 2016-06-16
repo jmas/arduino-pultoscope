@@ -35,7 +35,6 @@
 /**
  * Settings block
  */
-#define DEBUG 0
 #define VCC 5.0
 #define ARDUINO_FREQUENCY 16
 
@@ -55,7 +54,7 @@
 #define BTN_MINUS_PIN 13
 #define BTN_OK_PIN 12
 #define BTN_PLUS_PIN 11
-#define BTN_PRESS_DELAY 45
+#define BTN_PRESS_DELAY 50
 
 #define OSCILL_STATE_MEASURE 0
 #define OSCILL_STATE_SCAN 1
