@@ -92,7 +92,7 @@ void menu() {
       menuState = STATE_TERMINAL;
     }
   }
-  // write menu
+  // menu drawing
   display.setCursor(0,0);
   if (menuState == STATE_OSCILLOSCOPE) {
     display.setTextColor(WHITE, BLACK);
@@ -145,7 +145,9 @@ void oscilloscope() {
       for(int i=0; i<700; i++){ 
         while ((ADCSRA & 0x10) == 0);
         ADCSRA |= 0x10;
-        delayMicroseconds(500);
+        // @TODO Rewrite this part to use time millis()
+        // Because now this delay is affetch on UI drawing speed
+        // delayMicroseconds(500);
         oscillMass[i] = ADCH;
       }
     }
@@ -157,7 +159,7 @@ void oscilloscope() {
       }
     }
   }
-  // Find synchronization point
+  // find synchronization point
   bool flagSINHRO = 0;
   bool flagSINHRnull = 0;
   for (int y=1; y<255; y++) {
@@ -169,14 +171,14 @@ void oscilloscope() {
       oscillSynMass=y;
     }
   }
-  // Signal max
+  // signal max
   oscillVMax=0;
   for (int y=1; y<255; y++) {
     if (oscillVMax<oscillMass[y]) {
       oscillVMax=oscillMass[y];
     }
   }
-  // Chart frawing
+  // chart drawing
   if (! oscillPaused) {
     display.fillCircle(80,47-oscillSynU/7, 2, BLACK); // Рисуем уровень синхронизации
     x=3;
@@ -200,13 +202,13 @@ void oscilloscope() {
       display.drawLine(x+1, 47-oscillMass[y]/7+1, x+2, 47-oscillMass[y+1]/7+1, BLACK);
     }
   }
-  // Vertical marking
+  // vertical marking
   for (byte i=47; i>5; i=i-7) {
     display.drawPixel(0, i, BLACK);
     display.drawPixel(1, i, BLACK);
     display.drawPixel(2, i, BLACK);
   }
-  // Grid
+  // grid
   for (byte i=47; i>5; i=i-3) {
     display.drawPixel(21, i, BLACK);
     display.drawPixel(42, i, BLACK);
@@ -216,7 +218,7 @@ void oscilloscope() {
     display.drawPixel(i, 33, BLACK);
     display.drawPixel(i, 19, BLACK);
   }
-  // Menu drawing
+  // menu drawing
   if (oscillState == OSCILL_STATE_MEASURE) {
     display.setCursor(0,0);
     display.setTextColor(WHITE,BLACK);
@@ -317,7 +319,7 @@ void oscilloscope() {
     display.fillCircle(80,47-oscillSynU/7, 5, BLACK);
     display.fillCircle(80,47-oscillSynU/7, 2, WHITE);
   }
-  // Walking through menu items
+  // walking through menu items
   if (okBtnPressed) {
     oscillState++;
     if (oscillState > OSCILL_STATE_SYNCH) {
@@ -325,11 +327,11 @@ void oscilloscope() {
       oscillPaused = false;
     }
   }
-  // Get freequency when conter is ready
+  // get freequency when conter is ready
   if (FreqCount.available()) {
     oscillFreqCount = FreqCount.read();
   }
-  // Signal frequency
+  // signal frequency
   byte Frec1 = 0;
   long Frec = 0;
   bool flagFrec1 = 0;
