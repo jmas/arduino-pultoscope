@@ -17,7 +17,7 @@
 // Пин для Generatorа сигналов (не менять)
 #define led  9
 
-// Pin for DDS generator (do not change)
+// Pin for DDSGenerator (do not change)
 // Пин для Generatorа dds (не менять)
 #define dds  10
 
@@ -134,7 +134,7 @@ void setup(){
             display.setTextColor(BLACK);
             display.println("Generator");
             display.setCursor(10,20);
-            display.println("DDS Generator");
+            display.println("DDSGenerator");
             display.setCursor(10,30);
             display.println("Terminal");
             display.setCursor(0,40);
@@ -152,7 +152,7 @@ void setup(){
             display.println("Generator");
             display.setTextColor(BLACK); // 'inverted' text;
             display.setCursor(10,20);
-            display.println("DDS Generator");
+            display.println("DDSGenerator");
             display.setCursor(10,30);
             display.println("Terminal");
             display.setCursor(0,40);
@@ -170,7 +170,7 @@ void setup(){
             display.println("Generator");
             display.setTextColor(WHITE, BLACK); // 'inverted' text;
             display.setCursor(10,20);
-            display.println("DDS Generator");
+            display.println("DDSGenerator");
             display.setTextColor(BLACK);
             display.setCursor(10,30);
             display.println("Terminal");
@@ -189,7 +189,7 @@ void setup(){
             display.println("Generator");
             display.setTextColor(BLACK);
             display.setCursor(10,20);
-            display.println("DDS generator");
+            display.println("DDSGenerator");
             display.setTextColor(WHITE, BLACK);
             display.setCursor(10,30);
             display.println("Terminal");
@@ -635,7 +635,7 @@ void Generator() {
     display.display();
 }
 
-// DDS Generator
+// DDSGenerator
 void DDSGenerator() {
     int fr=10;
     if (menuDDS == 0) {
