@@ -145,8 +145,8 @@ void oscilloscope() {
       for(int i=0; i<700; i++){ 
         while ((ADCSRA & 0x10) == 0);
         ADCSRA |= 0x10;
-        // @TODO Rewrite this part to use time millis()
-        // Because now this delay is affetch on UI drawing speed
+        // @TODO Rewrite this part to use millis() (example in updateButtons() function)
+        // Because now this delay is affects the UI drawing speed
         // delayMicroseconds(500);
         oscillMass[i] = ADCH;
       }
