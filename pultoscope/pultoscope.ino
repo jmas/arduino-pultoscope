@@ -449,38 +449,38 @@ void terminal() {
  * Update buttons states
  */
 void updateButtons() {
-    minusBtnPressed = false;
-    okBtnPressed = false;
-    plusBtnPressed = false;
-    boolean _minusBtnPressed = false;
-    boolean _okBtnPressed = false;
-    boolean _plusBtnPressed = false;
-    boolean pressed = false;
-    if (digitalRead(BTN_MINUS_PIN) == HIGH) {
-      pressed = true;
-      _minusBtnPressed = true;
+  minusBtnPressed = false;
+  okBtnPressed = false;
+  plusBtnPressed = false;
+  boolean _minusBtnPressed = false;
+  boolean _okBtnPressed = false;
+  boolean _plusBtnPressed = false;
+  boolean pressed = false;
+  if (digitalRead(BTN_MINUS_PIN) == HIGH) {
+    pressed = true;
+    _minusBtnPressed = true;
+  }
+  if (digitalRead(BTN_OK_PIN) == HIGH) {
+    pressed = true;
+    _okBtnPressed = true;
+  }
+  if (digitalRead(BTN_PLUS_PIN) == HIGH) {
+    pressed = true;
+    _plusBtnPressed = true;
+  }
+  if (pressed) {
+    if (btnPressTime == 0) {
+      btnPressTime = millis();
     }
-    if (digitalRead(BTN_OK_PIN) == HIGH) {
-      pressed = true;
-      _okBtnPressed = true;
-    }
-    if (digitalRead(BTN_PLUS_PIN) == HIGH) {
-      pressed = true;
-      _plusBtnPressed = true;
-    }
-    if (pressed) {
-      if (btnPressTime == 0) {
-        btnPressTime = millis();
-      }
-      if (btnPressTime > 0 && (millis() - btnPressTime) > BTN_PRESS_DELAY) {
-        minusBtnPressed = _minusBtnPressed;
-        okBtnPressed = _okBtnPressed;
-        plusBtnPressed = _plusBtnPressed;
-        btnPressTime = 0;
-      }
-    } else {
+    if (btnPressTime > 0 && (millis() - btnPressTime) > BTN_PRESS_DELAY) {
+      minusBtnPressed = _minusBtnPressed;
+      okBtnPressed = _okBtnPressed;
+      plusBtnPressed = _plusBtnPressed;
       btnPressTime = 0;
     }
+  } else {
+    btnPressTime = 0;
+  }
 }
 
 /**
