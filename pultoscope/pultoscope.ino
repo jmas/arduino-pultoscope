@@ -12,15 +12,11 @@
 #define ARDUINO_FREQUENCY 16
 
 #define DISPLAY_CONTRAST 52
-#define DISPLAY_SCLK 7
-#define DISPLAY_DIN 6
-#define DISPLAY_DC 4
-#define DISPLAY_CS 3
-#define DISPLAY_RST 2
-
-#define PIN_MINUS_BTN 13
-#define PIN_OK_BTN 12
-#define PIN_PLUS_BTN 11
+#define DISPLAY_SCLK_PIN 7
+#define DISPLAY_DIN_PIN 6
+#define DISPLAY_DC_PIN 4
+#define DISPLAY_CS_PIN 3
+#define DISPLAY_RST_PIN 2
 
 #define STATE_MENU 0
 #define STATE_OSCILLOSCOPE 1
@@ -28,6 +24,9 @@
 #define STATE_DDS_GENERATOR 3
 #define STATE_TERMINAL 4
 
+#define BTN_MINUS_PIN 13
+#define BTN_OK_PIN 12
+#define BTN_PLUS_PIN 11
 #define BTN_PRESS_DELAY 50
 
 #define OSCILL_STATE_MEASURE 0
@@ -65,11 +64,11 @@ long oscillFreqCountX = 0;
 
 // display
 Adafruit_PCD8544 display = Adafruit_PCD8544(
-  DISPLAY_SCLK, 
-  DISPLAY_DIN, 
-  DISPLAY_DC, 
-  DISPLAY_CS, 
-  DISPLAY_RST
+  DISPLAY_SCLK_PIN, 
+  DISPLAY_DIN_PIN, 
+  DISPLAY_DC_PIN, 
+  DISPLAY_CS_PIN, 
+  DISPLAY_RST_PIN
 );
 
 /**
@@ -427,15 +426,15 @@ void updateButtons() {
     boolean _okBtnPressed = false;
     boolean _plusBtnPressed = false;
     boolean pressed = false;
-    if (digitalRead(PIN_MINUS_BTN) == HIGH) {
+    if (digitalRead(BTN_MINUS_PIN) == HIGH) {
       pressed = true;
       _minusBtnPressed = true;
     }
-    if (digitalRead(PIN_OK_BTN) == HIGH) {
+    if (digitalRead(BTN_OK_PIN) == HIGH) {
       pressed = true;
       _okBtnPressed = true;
     }
-    if (digitalRead(PIN_PLUS_BTN) == HIGH) {
+    if (digitalRead(BTN_PLUS_PIN) == HIGH) {
       pressed = true;
       _plusBtnPressed = true;
     }
