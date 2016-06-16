@@ -452,10 +452,10 @@ void updateButtons() {
   minusBtnPressed = false;
   okBtnPressed = false;
   plusBtnPressed = false;
-  boolean _minusBtnPressed = false;
-  boolean _okBtnPressed = false;
-  boolean _plusBtnPressed = false;
-  boolean pressed = false;
+  bool _minusBtnPressed = false;
+  bool _okBtnPressed = false;
+  bool _plusBtnPressed = false;
+  bool pressed = false;
   if (digitalRead(BTN_MINUS_PIN) == HIGH) {
     pressed = true;
     _minusBtnPressed = true;
