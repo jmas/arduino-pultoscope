@@ -180,7 +180,7 @@ void oscilloscope() {
   }
   // chart drawing
   if (! oscillPaused) {
-    display.fillCircle(80,47-oscillSynU/7, 2, BLACK); // Рисуем уровень синхронизации
+    display.fillCircle(80,47-oscillSynU/7, 2, BLACK); // synchronization level drawing
     x=3;
     for (int y=oscillSynMass; y<oscillSynMass+80; y++) {
       if (oscillScan < 7) { x++; }
@@ -191,8 +191,8 @@ void oscilloscope() {
     }
     oscillSynMass = 0;
   } else {
-    display.drawLine(oscillScroll/8,8,oscillScroll/8+6,8, BLACK); // Шкала прокрутки
-    display.drawLine(oscillScroll/8,9,oscillScroll/8+6,9, BLACK); // Шкала прокрутки
+    display.drawLine(oscillScroll/8,8,oscillScroll/8+6,8, BLACK); // scroll scale
+    display.drawLine(oscillScroll/8,9,oscillScroll/8+6,9, BLACK); // scroll scale
     x = 3;
     for (int y=oscillScroll; y<oscillScroll+80; y++) {
       if (oscillScan < 7) { x++; }
